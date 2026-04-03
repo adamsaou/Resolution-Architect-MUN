@@ -258,7 +258,7 @@ with st.sidebar:
 
 # ── Main area ──────────────────────────────────────────────────────────────
 st.title("Resolution Architect Pro")
-st.caption("NLP-powered drafting assistant for Model UN resolutions")
+st.caption("NLP (NAtural Language Processing) -powered drafting assistant for Model UN resolutions")
 
 raw_input = st.text_area(
     "Paste your draft resolution or a single clause:",
