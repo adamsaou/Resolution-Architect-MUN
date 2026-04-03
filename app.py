@@ -13,7 +13,20 @@ Optimised version:
 """
 
 import streamlit as st
-import spacy
+import subprocess, sys, re
+
+try:
+    import spacy
+    spacy.load("en_core_web_sm")
+except (ImportError, OSError):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "spacy"])
+    subprocess.check_call([
+        sys.executable,  "-m", "pip", "install",
+        "https://github.com/explosion/spacy-models/releases/download/"
+        "en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl"
+    ])
+    import spacy
+
 import re
 
 # ── Page config (must be first Streamlit call) ─────────────────────────────
