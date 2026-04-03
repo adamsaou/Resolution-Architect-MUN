@@ -27,12 +27,7 @@ st.set_page_config(
 # ── Load NLP model once ────────────────────────────────────────────────────
 @st.cache_resource(show_spinner="Loading NLP engine…")
 def load_nlp():
-    try:
-        return spacy.load("en_core_web_sm")
-    except OSError:
-        from spacy.cli import download
-        download("en_core_web_sm")
-        return spacy.load("en_core_web_sm")
+    return spacy.load("en_core_web_sm")
 
 nlp = load_nlp()
 
@@ -250,7 +245,7 @@ with st.sidebar:
 
 # ── Main area ──────────────────────────────────────────────────────────────
 st.title("Resolution Architect Pro")
-st.caption("NLP(Natural Language Processing)-powered drafting assistant for Model UN resolutions")
+st.caption("NLP-powered drafting assistant for Model UN resolutions")
 
 raw_input = st.text_area(
     "Paste your draft resolution or a single clause:",
