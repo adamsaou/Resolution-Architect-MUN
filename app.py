@@ -387,6 +387,8 @@ elif not run:
 """)
 
 
+#This is so tuff man omg i can write shit
+
 col = st.columns(7)[3]
 click = col.link_button("GitHub", "https://github.com/adamsaou")
 
